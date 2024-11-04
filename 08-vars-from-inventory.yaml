@@ -1,0 +1,11 @@
+#Here we have to give variables in inventory.ini as follows
+# [web:vars]
+# COURSE="ANSIBLE"
+# DURATION="120HRS"
+# TRAINER="Sivakumar Reddy"
+- name: variables to print
+  hosts: web
+  tasks:
+  - name: print the information
+    ansible.builtin.debug:
+      msg: " Hi, I am learning {{COURSE}}, Duration is {{DURATION}}, trainer is: {{TRAINER}}"

@@ -1,0 +1,8 @@
+- name: variables to print
+  hosts: web
+  tasks:
+  - name: print the information
+    ansible.builtin.debug:
+      msg: " Hello {{NAME}, good {{GREETING}}}"
+#while running the playbook we have to give as follows
+#ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=PASSWORD 09-vars-from-args.yaml -e "NAME=Kiran GREETING=Morning"
